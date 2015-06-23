@@ -30,7 +30,7 @@ router.post('/', function(req, res){
 				fs.unlink(fullPath);
 				fs.unlink(fullPath+'_out.txt');
 				// var trpath = 'https://translate.google.co.in/translate_a/single?client=t&dt=t&sl=hi&tl=en&q='+data.trim();
-				var trpath = 'https://translate.google.co.in/translate_a/single?client=t&dt=t&sl=hi&tl=en&ie=UTF-8&oe=UTF-8&q='+encodeURIComponent(data.trim());
+				var trpath = 'https://translate.google.co.in/translate_a/single?client=t&dt=t&sl=hi&tl=en&ie=UTF-8&oe=UTF-8&q='+encodeURIComponent(data.trim().replace(/\r?\n|\r/g," "));
 				// var trpath = 'https://translate.google.co.in/translate_a/single?client=t&dt=t&sl=hi&tl=en&ie=UTF-8&oe=UTF-8';
 
 				// var trpath = '/translate_a/single?client=t&dt=t&sl=en&tl=hi&q=soft'
